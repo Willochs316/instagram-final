@@ -1,0 +1,33 @@
+.tablist-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  border-top: 1px solid #dbdbdb;
+  font-size: 12px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  color: #8e8e8e;
+  height: 52px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.fa-th {
+  font-size: 12px;
+  color: #8e8e8e;
+}
+
+.tablist {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  margin: 0px 60px 0px 0px;
+  text-transform: uppercase;
+}
+.tablist-item {
+  margin-left: 6px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}

@@ -1,0 +1,115 @@
+.navigation-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* padding: 0px 50px; */
+  font-size: 14px;
+  background-color: #ffffff;
+  height: 60px;
+  border: 0 solid #000;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  transition: all 0.2s ease-in-out;
+  border-bottom: 1px solid #dbdbdb;
+  background-color: #fff;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  z-index: 3;
+}
+
+.navigation-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  max-width: 975px;
+  padding: 0 20px;
+  border: 0 solid #000;
+  position: relative;
+  color: #262626;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  height: 60px;
+  z-index: 10;
+}
+
+.navigation-image {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 333.5px;
+  height: 36px;
+  margin: 0;
+  padding: 0;
+  flex: 0 0 auto;
+  cursor: pointer;
+}
+
+.search-input-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-shrink: 0;
+  margin: 0;
+  color: #8e8e8e;
+  position: relative;
+  border-radius: 8px;
+  font-weight: 300;
+  font-size: 16px;
+  font-weight: 300;
+  background-color: #efefef;
+  border: 1px solid rgba(0, 0, 0, 0.0975);
+  border-radius: 8px;
+  padding: 0 16px;
+  height: 36px;
+  width: 268px;
+  cursor: text;
+  z-index: 2;
+}
+
+.FaSearch {
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
+  width: 16px;
+}
+
+.navigation-input {
+  font-size: 16px;
+  font-weight: 300;
+  outline: 0;
+  border: none;
+  background: 0 0;
+  background-color: transparent;
+  line-height: 25px;
+  max-width: 140px;
+  cursor: text;
+}
+
+.icons-container {
+  display: flex;
+  margin-left: 50px;
+  width: 300px;
+  justify-content: space-evenly;
+  transition: height 0.2s ease-in-out;
+  cursor: pointer;
+
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  margin-left: 22px;
+  padding-left: 24px;
+  white-space: nowrap;
+}
+
+.icons {
+  margin-left: 22px;
+}
+

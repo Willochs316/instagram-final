@@ -1,0 +1,359 @@
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 0 solid #000;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-bottom: 44px;
+  min-height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+}
+
+.signForm-container {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  margin: 32px auto 0;
+  width: 935px;
+  padding-bottom: 32px;
+  height: 625.15px;
+  /* margin-bottom: 52px; */
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  height: 542px;
+  background-color: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 1px;
+  margin: 0 0 10px;
+  padding: 10px 0;
+}
+
+.signup-header {
+  background-repeat: no-repeat;
+  height: 51px;
+  width: 175px;
+  background-image: url('https://www.instagram.com/static/bundles/es6/sprite_core_2x_bcd90c1d4868.png/bcd90c1d4868.png');
+  background-size: 440px 411px;
+  background-position: 0 -129px;
+  margin: 22px auto 12px;
+}
+
+.signup-h2 {
+  padding: 0;
+  border: 0;
+  color: rgba(var(--f52, 142, 142, 142), 1);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0 40px 10px;
+  text-align: center;
+}
+
+.signup-input {
+  border: 0 solid #000;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-content: stretch;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  /* margin-top: 24px; */
+  max-width: 350px;
+  width: 100%;
+  height: 265px;
+}
+
+.signupForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 213px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  flex: 0 0 auto;
+  margin-top: 24px;
+}
+
+.input-field {
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 14px;
+  width: 100%;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  width: 268px;
+  margin: 0 40px 6px;
+}
+
+.sm-input {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  line-height: 18px;
+  color: #262626;
+  background-color: #e8f0fe;
+  border: none;
+  height: 36px;
+  flex: 1 0 auto;
+  margin: 0;
+  outline: 0;
+  flex: 1 0 auto;
+  margin: 0;
+  outline: 0;
+  overflow: hidden;
+  padding: 9px 0 7px 8px;
+  font-size: 12px;
+  cursor: text;
+}
+
+.signbtn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0 solid #000;
+  padding: 0;
+  margin-bottom: 8px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 8px;
+}
+
+.signupBtn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 268px;
+  height: 30px;
+  padding: 5px 9px;
+  background-color: #0095f6;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  cursor: pointer;
+}
+
+.signup-icon {
+  height: 16px;
+  width: 16px;
+  /* margin-right: 8px; */
+  cursor: pointer;
+}
+
+.signup-btn {
+  outline: 0;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  line-height: 18px;
+  appearance: none;
+  background: 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 5px 9px;
+  text-align: center;
+  width: auto;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.signup-separator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #999;
+  margin: 10px 40px 18px;
+  width: 268px;
+}
+
+.line {
+  height: 1px;
+  width: 40%;
+  background-color: #dbdbdb;
+}
+
+.sign-or {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 15px;
+  /* margin: 0 18px; */
+  text-transform: uppercase;
+}
+
+.signup-btn2 {
+  width: 268px;
+  height: 30px;
+  padding: 5px 9px;
+  background-color: #0095f6;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* .signin-alt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  line-height: 18px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  user-select: none;
+  width: auto;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+} */
+
+.signin-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 40px;
+  color: #8e8e8e;
+  cursor: pointer;
+}
+
+.policy-text {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.forgot-password-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px 0px 0px;
+  width: 100%;
+}
+
+.forgot-password {
+  text-align: center;
+  color: #00376b;
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.account-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #dbdbdb;
+  width: 350px;
+  border-radius: 1px;
+  margin: 0 0 10px;
+  padding: 10px 0;
+}
+
+.account {
+  padding: 0;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  line-height: 18px;
+  margin: -3px 0px -4px;
+  color: #262626;
+}
+
+.account-text {
+  padding: 0;
+  border: 0;
+  font-size: 14px;
+  margin: 15px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.sign-up {
+  color: #0095f6;
+  margin-left: 4px;
+  font-weight: 400;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 102px;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.getApp {
+  color: #262626;
+  line-height: 18px;
+  width: 100%;
+}
+
+.app-text {
+  margin: 10px 20px 10px 20px;
+  color: #262626;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.appStore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  width: 350px;
+  height: 44px;
+}
+
+.app-image {
+  margin: 6px;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  height: 40px;
+  cursor: pointer;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 0px 52px;
+  padding: 0;
+  height: 82px;
+  /* width: 1888px; */
+  line-height: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+}

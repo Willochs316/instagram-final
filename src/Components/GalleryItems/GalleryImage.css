@@ -1,0 +1,87 @@
+.gallery-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 935px;
+  gap: 28px;
+}
+
+.gallery-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.image {
+  width: 293px;
+  height: 293px;
+  cursor: pointer;
+}
+
+.reel-icon {
+  display: flex;
+  position: absolute;
+  top: 10px;
+  left: 91%;
+  cursor: pointer;
+}
+
+.reel {
+  width: 18px;
+  height: 18px;
+  color: #fff;
+  fill: #fff;
+  cursor: pointer;
+}
+
+.copy {
+  width: 18px;
+  height: 18px;
+  color: #fff;
+  fill: #fff;
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+
+.gallery-image:hover .gallery-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 293px;
+  background-color: rgba(0, 0, 0, 0.1);
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.gallery-items {
+  display: none;
+}
+
+.gallery-likes {
+  display: flex;
+  align-items: center;
+  margin: 16px;
+  color: #fff;
+}
+
+.gallery-comments {
+  display: flex;
+  align-items: center;
+  margin: 16px;
+  color: #fff;
+}
+
+.fa-heart {
+  margin-right: 8px;
+  /* margin-right: 40px; */
+}
+
+.fa-comment {
+  transform: rotateY(180deg);
+  margin-right: 8px;
+}

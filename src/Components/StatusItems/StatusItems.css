@@ -1,0 +1,44 @@
+/* .status-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+}
+
+.status-display {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  width: 125px;
+  height: 130px;
+  cursor: pointer;
+}
+
+.status-image {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #dbdbdb;
+  height: 85px;
+  width: 85px;
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
+}
+
+.status-pic {
+  border-radius: 50%;
+}
+
+.username {
+  text-transform: capitalize;
+  padding: 15px 0px 0px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #262626;
+} */
