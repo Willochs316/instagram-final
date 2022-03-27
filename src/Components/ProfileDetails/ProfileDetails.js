@@ -104,7 +104,7 @@ const ProfileDetails = () => {
           <div className='profile-link'>
             <a
               author_id='1455908751'
-              class='heKAw'
+              className='heKAw'
               href='https://fontawesome.com/v5/search'
               page_id='profilePage'
               rel='me nofollow noopener noreferrer'
