@@ -1,21 +1,42 @@
-import { BrowserRouter as Router, Switch, Route,Routes } from "react-router-dom";
-import { Provider } from "react-redux";
-import Instagram from "./Components/Instagram";
-import { store } from "./redux/store";
-import Homepage from "./Components/ProfileDetails/ProfileDetails";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Provider } from 'react-redux';
+
+import NavBar from './Components/NavBar/NavBar';
+import NavBarImages from './Components/NavBar/NavBarImages';
+import LoginForm from './Components/LoginForm/LoginForm';
+import LoginImage from './Components/LoginForm/LoginImage'; // wrong place
+import Signup from './Components/SignUp/Signup';
+import SignupImage from './Components/SignUp/SignupImage';
+import NewsMain from './Components/NewsFeed/NewsMain';
+import ProfileDetails from './Components/ProfileDetails/ProfileDetails';
+
+import { store } from './redux/store';
 
 function App() {
   return (
     <Provider store={store}>
-      <div className="App">
-        <Router>
+      <NavBar figures={NavBarImages} />
+      <Router>
+        <div className="main">
           <Routes>
+            <Route
+              path="/login"
+              element={<LoginForm loginSlides={LoginImage} />}
+            />
+            <Route
+              path="/signup"
+              element={<Signup signinSlides={SignupImage} />}
+            />
 
-          {/* <Instagram /> */}
-          <Route path="/" element={<Homepage />} />
+            <Route path="/" element={<NewsMain />} />
+            <Route path="/ProfileDetails" element={<ProfileDetails />} />
+            <Route
+              path="/signup"
+              element={<Signup signinSlides={SignupImage} />}
+            />
           </Routes>
-        </Router>
-      </div>
+        </div>
+      </Router>
     </Provider>
   );
 }
