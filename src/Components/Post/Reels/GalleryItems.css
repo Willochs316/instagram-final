@@ -1,15 +1,14 @@
 .tablist-container {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 50px;
   border-top: 1px solid #dbdbdb;
   font-size: 12px;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, sans-serif;
   color: #8e8e8e;
-  height: 52px;
+  height: 53px;
+  width: 935px;
   box-sizing: border-box;
   cursor: pointer;
 }
@@ -20,11 +19,11 @@
 }
 
 .tablist {
-  display: grid;
-  grid-template-columns: auto auto;
+  display: flex;
   align-items: center;
   margin: 0px 60px 0px 0px;
   text-transform: uppercase;
+  margin-top: -1px;
 }
 .tablist-item {
   margin-left: 6px;
