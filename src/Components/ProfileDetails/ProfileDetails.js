@@ -137,26 +137,57 @@ const ProfileDetails = () => {
                   title='  bellanaijaweddings,'
                 />
               </div>
-              <ProfileTxt
-                className='profile-followed'
-                style={{ color: '#8E8E8E' }}
-                entitle='+5 more'
-              />
+
+              <div className='profile-link'>
+                <a
+                  author_id='1455908751'
+                  className='heKAw'
+                  href='https://fontawesome.com/v5/search'
+                  page_id='profilePage'
+                  rel='me nofollow noopener noreferrer'
+                  target='_blank'
+                >
+                  fontawesome.com/25-top-black-fonts-to-watch-in-2022
+                </a>
+              </div>
+
+              <div className='profile-updates'>
+                <ProfileTxt
+                  className='profile-followed'
+                  entitle='Followed by'
+                />
+                <div className='profile-text-conatiner'>
+                  <ProfileTxt
+                    className='profile-update-texts'
+                    title=' myweddingnigeria,'
+                  />
+                  <ProfileTxt
+                    className='profile-update-texts'
+                    title=' maxwelljennings,'
+                  />
+
+                  <ProfileTxt
+                    className='profile-followed'
+                    style={{ color: '#8E8E8E' }}
+                    entitle='+5 more'
+                  />
+                </div>
+              </div>
             </div>
           </div>
+
+          <div>
+            <StatusItems reputes={StatusImageData} />
+          </div>
+
+          <div>
+            <GalleryItems />
+          </div>
+
+          <div>
+            <GalleryImage galleryImages={GalleryImageData} />
+          </div>
         </div>
-      </div>
-
-      <div>
-        <StatusItems reputes={StatusImageData} />
-      </div>
-
-      <div>
-        <GalleryItems />
-      </div>
-
-      <div>
-        <GalleryImage galleryImages={GalleryImageData} />
       </div>
     </div>
   );

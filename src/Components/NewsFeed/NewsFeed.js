@@ -20,9 +20,6 @@ const NewsFeed = ({ userSlides }) => {
     setTimeout(nextStep, 3000);
   }, [userSlides]);
 
-  // useEffect(() => {
-  //   setTimeout(() => setCurrent(current + 1), 1000);
-  // }, [userSlides]);
 
   if (!Array.isArray(userSlides) || userSlides.length <= 0) {
     return null;

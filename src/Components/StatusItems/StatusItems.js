@@ -1,12 +1,7 @@
 import Slider from 'react-slick';
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
-// import "react-magic-slider-dots/dist/magic-dots.css";
-// import MagicSliderDots from "react-magic-slider-dots";
 
 import { FaChevronCircleLeft, FaChevronCircleRight } from 'react-icons/fa';
 import StatusImageIcons from './StatusImageIcons';
@@ -48,7 +43,7 @@ const StatusItems = ({ reputes }) => {
             position: 'relative',
           }}
         >
-          {reputes.map((reputes) => (
+          {reputes.map((repute) => (
             <div className='slide'>
               <div className='status-image'>
                 <img className='status-pic' src={reputes.image} alt='' />
