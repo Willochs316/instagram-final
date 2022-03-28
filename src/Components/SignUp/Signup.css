@@ -10,7 +10,7 @@
   flex: 1 1 auto;
   min-width: 0;
   margin-bottom: 44px;
-  min-height: 100%;
+  width: 1440px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
     Arial, sans-serif;
 }
@@ -22,7 +22,7 @@
   margin: 32px auto 0;
   width: 935px;
   padding-bottom: 32px;
-  height: 625.15px;
+  height: 790px;
   /* margin-bottom: 52px; */
 }
 
@@ -357,3 +357,123 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
     Arial, sans-serif;
 }
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 0px 52px;
+  padding: 0;
+  height: 82px;
+  /* width: 1888px; */
+  line-height: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+}
+
+.footer-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+  width: 100%;
+}
+.footer-items2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-items3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fm-item {
+  font-size: 12px;
+  height: 16px;
+  font-weight: 400;
+  color: #8e8e8e;
+  text-transform: capitalize;
+  margin-bottom: 12px;
+  margin-left: 8px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.select-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  color: #8e8e8e;
+  position: relative;
+  flex: 0 0 auto;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+.select-text {
+  text-transform: none;
+  height: 16px;
+  font-weight: 400;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.select-items {
+  display: flex;
+  align-items: center;
+  outline: none;
+  cursor: pointer;
+}
+
+.language-input {
+  border: none;
+  outline: none;
+  display: none;
+}
+
+.fa-chevron-down {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.trademark {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 12px;
+  font-weight: 400;
+  flex: 0 0 auto;
+  margin-left: 16px;
+  color: #8e8e8e;
+  cursor: text;
+}
+
+.select-language {
+  display: flex;
+  align-content: stretch;
+  flex-direction: column;
+  color: #8e8e8e;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+/* .selected-item {
+  border: 1px solid #ccc;
+  padding: 3px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.selected-item input {
+  border: none;
+} */
