@@ -24,17 +24,9 @@ const Instagram = () => {
               path='/LoginForm'
               element={<LoginForm loginSlides={LoginImage} />}
             />
-            <Route
-              path='/Signup'
-              element={<Signup signinSlides={SignupImage} />}
-            />
 
             <Route path='/' element={<NewsMain />} />
             <Route path='/ProfileDetails' element={<ProfileDetails />} />
-            <Route
-              path='/Signup'
-              element={<Signup signinSlides={SignupImage} />}
-            />
           </Routes>
         </div>
       </Router>

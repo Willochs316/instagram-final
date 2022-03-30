@@ -10,7 +10,7 @@ import SignupImage from './Components/SignUp/SignupImage';
 import NewsMain from './Components/NewsFeed/NewsMain';
 import ProfileDetails from './Components/ProfileDetails/ProfileDetails';
 
-import { store } from './redux/store';
+import { store } from './redux/store'
 
 function App() {
   return (
@@ -30,10 +30,6 @@ function App() {
 
             <Route path="/" element={<NewsMain />} />
             <Route path="/ProfileDetails" element={<ProfileDetails />} />
-            <Route
-              path="/signup"
-              element={<Signup signinSlides={SignupImage} />}
-            />
           </Routes>
         </div>
       </Router>
