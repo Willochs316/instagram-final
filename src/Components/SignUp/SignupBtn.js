@@ -1,5 +1,9 @@
-const SignupBtn = ({ className, title }) => {
-  return <button className={className}>{title}</button>;
+const SignupBtn = ({ className, title, onSubmit = () => {} }) => {
+  return (
+    <button className={className} onSubmit={onSubmit}>
+      {title}
+    </button>
+  );
 };
 
 export default SignupBtn;
