@@ -21,6 +21,10 @@ const Instagram = () => {
         <div className='main'>
           <Routes>
             <Route
+              path='/signup'
+              element={<Signup signinSlides={SignupImage} />}
+            />
+            <Route
               path='/LoginForm'
               element={<LoginForm loginSlides={LoginImage} />}
             />

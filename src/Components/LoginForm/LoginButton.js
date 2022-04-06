@@ -1,5 +1,9 @@
-const LoginButton = ({ className, title }) => {
-  return <button className={className}>{title}</button>;
+const LoginButton = ({ className, title, onSubmit = () => {}, type }) => {
+  return (
+    <button className={className} onClick={onSubmit} type={type}>
+      {title}
+    </button>
+  );
 };
 
 export default LoginButton;

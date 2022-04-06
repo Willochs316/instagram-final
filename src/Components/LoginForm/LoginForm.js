@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import Input from './Input';
 import Label from './Label';
 import LoginButton from './LoginButton';
@@ -5,6 +6,11 @@ import LoginTxt from './LoginTxt';
 import './LoginForm.css';
 import LoginIcons from './LoginIcons';
 import { FaChevronDown } from 'react-icons/fa';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { login, reset } from '../../redux/features/auth/authSlice';
+import Spinner from '../Spinner/Spinner';
 
 const LoginForm = ({ loginSlides }) => {
   const userLoginImages = (userId) => {
@@ -13,6 +19,133 @@ const LoginForm = ({ loginSlides }) => {
     );
     return existingLoginImages;
   };
+
+  const [signUpInfo, setSignUpInfo] = useState({
+    mobileNumberOrEmail: '',
+    password: '',
+  });
+
+  const { mobileNumberOrEmail, password } = signUpInfo;
+  const [errors, setErrors] = useState({
+    mobileNumberOrEmailError: '',
+    mobileNumberOrEmailTouched: false,
+    passwordError: '',
+    passwordTouched: false,
+  });
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );
+
+  useEffect(() => {
+    if (isError) {
+      toast.error(message);
+    }
+
+    if (isSuccess || user) {
+      navigate('/');
+    }
+
+    dispatch(reset());
+  }, [user, isError, isSuccess, message, navigate, dispatch]);
+
+  const validateForm = () => {
+    if (
+      /\S+@\S+\.\S+/.test(signUpInfo.mobileNumberOrEmail) ||
+      /^[+]?[\s./0-9]*[(]?[0-9]{1,4}[)]?[-\s./0-9]*$/g.test(
+        signUpInfo.mobileNumberOrEmail
+      ) ||
+      /^[a-zA-Z0-9]+$/.test(signUpInfo.username)
+    ) {
+      setErrors((prevState) => ({
+        ...prevState,
+        mobileNumberOrEmailError: '',
+      }));
+    } else {
+      setErrors((prevState) => ({
+        ...prevState,
+        mobileNumberOrEmailError: 'Please enter a valid email or phone number',
+      }));
+    }
+
+    if (signUpInfo.username.match(/^[a-zA-Z0-9]+$/)) {
+      setErrors((prevState) => ({
+        ...prevState,
+        usernameError: '',
+      }));
+    } else {
+      setErrors((prevState) => ({
+        ...prevState,
+        usernameError: 'Please enter an alphanumeric username',
+      }));
+    }
+
+    if (signUpInfo.password.match(/^[a-zA-Z0-9]{4,100}$/)) {
+      setErrors((prevState) => ({
+        ...prevState,
+        passwordError: '',
+      }));
+    } else {
+      setErrors((prevState) => ({
+        ...prevState,
+        passwordError: 'Password must be more than 6 characters',
+      }));
+    }
+  };
+
+  const handleTouched = (event) => {
+    const { name } = event.target;
+
+    if (name === 'mobileNumberOrEmail') {
+      setErrors((prevState) => ({
+        ...prevState,
+        mobileNumberOrEmailTouched: true,
+      }));
+    }
+
+    if (name === 'username') {
+      setErrors((prevState) => ({
+        ...prevState,
+        usernameTouched: true,
+      }));
+    }
+
+    if (name === 'password') {
+      setErrors((prevState) => ({
+        ...prevState,
+        passwordTouched: true,
+      }));
+    }
+  };
+
+  const handleChange = (event) => {
+    const value = event.target.value;
+    const name = event.target.name;
+    console.log(value, 'wo', 'willochs');
+
+    setSignUpInfo((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const userData = {
+      mobileNumberOrEmail,
+      password,
+    };
+
+    dispatch(login(userData));
+  };
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <div className='login-container'>
@@ -36,31 +169,62 @@ const LoginForm = ({ loginSlides }) => {
                   <Input
                     type='text'
                     className='cm-input'
-                    name='text'
+                    name='mobileNumberOrEmail'
+                    onChange={handleChange}
+                    onBlur={validateForm}
+                    onFocus={handleTouched}
+                    value={mobileNumberOrEmail}
                     placeholder='Phone number, username or email address'
                     required
                   />
                   <LoginButton className='field-btn' />
                 </div>
+                <div
+                  style={{
+                    fontSize: '12px',
+                    textAlign: 'center',
+                    color: 'red',
+                  }}
+                >
+                  {errors.mobileNumberOrEmailError &&
+                  errors.mobileNumberOrEmailTouched
+                    ? errors.mobileNumberOrEmailError
+                    : ''}
+                </div>
 
                 <div className='field'>
                   <label className='label'>Password</label>
                   <Input
-                    type='password'
+                    type='text'
                     className='cm-input'
                     name='password'
+                    onChange={handleChange}
+                    onBlur={validateForm}
+                    onFocus={handleTouched}
+                    value={password}
                     placeholder='Password'
                     required
                   />
                   <LoginButton className='field-btn2' title='show' />
+                </div>
+                <div
+                  style={{
+                    fontSize: '12px',
+                    textAlign: 'center',
+                    color: 'red',
+                  }}
+                >
+                  {errors.passwordError && errors.passwordTouched
+                    ? errors.passwordError
+                    : ''}
                 </div>
 
                 <div className='btn-container'>
                   <LoginButton
                     className='login-btn'
                     type='submit'
+                    onSubmit={handleSubmit}
                     title='Log In'
-                    disabled
                   />
 
                   {/* <button type='submit' className='login-btn' disabled>
