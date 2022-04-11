@@ -8,10 +8,10 @@ import Signup from './Components/SignUp/Signup';
 import SignupImage from './Components/SignUp/SignupImage';
 import NewsMain from './Components/NewsFeed/NewsMain';
 import ProfileDetails from './Components/ProfileDetails/ProfileDetails';
-
 import { store } from './redux/app/store';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PostModal from './Components/Modal/PostModal';
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
       <Router>
         <div className='main'>
           <Routes>
+            <Route path='/post' element={<PostModal />} />
             <Route
               path='/login'
               element={<LoginForm loginSlides={LoginImage} />}
