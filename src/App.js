@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
-
 import NavBar from './Components/NavBar/NavBar';
 import NavBarImages from './Components/NavBar/NavBarImages';
 import LoginForm from './Components/LoginForm/LoginForm';
@@ -10,33 +9,32 @@ import SignupImage from './Components/SignUp/SignupImage';
 import NewsMain from './Components/NewsFeed/NewsMain';
 import ProfileDetails from './Components/ProfileDetails/ProfileDetails';
 
-import { store } from './redux/store';
+import { store } from './redux/app/store';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <Provider store={store}>
       <NavBar figures={NavBarImages} />
       <Router>
-        <div className="main">
+        <div className='main'>
           <Routes>
             <Route
-              path="/login"
+              path='/login'
               element={<LoginForm loginSlides={LoginImage} />}
             />
             <Route
-              path="/signup"
+              path='/signup'
               element={<Signup signinSlides={SignupImage} />}
             />
 
-            <Route path="/" element={<NewsMain />} />
-            <Route path="/ProfileDetails" element={<ProfileDetails />} />
-            <Route
-              path="/signup"
-              element={<Signup signinSlides={SignupImage} />}
-            />
+            <Route path='/' element={<NewsMain />} />
+            <Route path='/ProfileDetails' element={<ProfileDetails />} />
           </Routes>
         </div>
       </Router>
+      <ToastContainer />
     </Provider>
   );
 }
