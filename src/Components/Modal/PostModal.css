@@ -108,3 +108,7 @@
   width: 100%;
   line-height: 18px;
 }
+
+.custom-file-input{
+  display: none;
+}

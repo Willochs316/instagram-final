@@ -1,8 +1,18 @@
-import React from 'react';
-import Button from '../NewsFeed/Button';
+import React, { useRef } from 'react';
 import './PostModal.css';
 
 const PostModal = () => {
+  const fileUpload = useRef(null);
+
+  const handleFileChange = (event) => {
+    console.log(event, 'file');
+  };
+
+  const handleFileUploads = () => {
+    const fileBtn = fileUpload.current.click();
+    console.log(fileBtn, 'fileUpload');
+  };
+
   return (
     <>
       <div className='modal-body'>
@@ -43,8 +53,16 @@ const PostModal = () => {
             </div>
 
             <div className='modal-button'>
-            <input type="file" class="custom-file-input" id="customFile" />
-              <button className='modal-btn'>Select from computer</button>
+              <input
+                type='file'
+                ref={fileUpload}
+                className='custom-file-input'
+                id='customFile'
+                onChange={handleFileChange}
+              />
+              <button className='modal-btn' onClick={handleFileUploads}>
+                Select from computer
+              </button>
             </div>
           </div>
         </div>
