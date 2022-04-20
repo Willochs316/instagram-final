@@ -226,10 +226,6 @@ const LoginForm = ({ loginSlides }) => {
                     onSubmit={handleSubmit}
                     title='Log In'
                   />
-
-                  {/* <button type='submit' className='login-btn' disabled>
-                    Log In
-                  </button> */}
                 </div>
 
                 <div className='separator'>
