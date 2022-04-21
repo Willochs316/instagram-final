@@ -4,7 +4,7 @@ import Svgs from '../../assets/svgs';
 import axios from 'axios';
 import './PostModal.css';
 
-const PostModal = () => {
+const PostModal = ({ show, setModal }) => {
   const [file, setFile] = useState('');
   const [filename, setFilename] = useState('');
   const [uploadedFile, setUploadedFile] = useState({});
@@ -44,44 +44,62 @@ const PostModal = () => {
     }
   };
 
+  const handleClose = () => {
+    setModal(false);
+  };
+
   return (
     <>
-      <form className='modal-body'>
-        <div className='modal-container'>
-          <div className='modal-header'>
-            <h2 className='modal-head'>Create new post</h2>
+      {show ? (
+        <form className='modal-body'>
+          <div className='close-icon'>
+            <Svgs.CloseUploadIcon onClick={handleClose} />
           </div>
 
-          {fileUrl ? (
-            <div className='modal-content'>
-              <img className='image-content' src={fileUrl} alt='image-upload' />
-            </div>
-          ) : (
-            <div className='modal-file'>
-              <div className='modal-image'>
-                <Svgs.ImageUploadIcon />
-              </div>
-
-              <div className='modal-title'>
-                <p className='modal-text'>Drag photos and videos here</p>
-              </div>
-
-              <div className='modal-button'>
-                <input
-                  type='file'
-                  ref={fileUpload}
-                  className='custom-file-input'
-                  id='customFile'
-                  onChange={handleFileChange}
+          <div className='modal-container'>
+            {fileUrl ? (
+              <div className='modal-content'>
+                <div className='modal-header'>
+                  <h2 className='modal-head'>Crop</h2>
+                </div>
+                <img
+                  className='image-content'
+                  src={fileUrl}
+                  alt='image-upload'
                 />
-                <button className='modal-btn' onClick={handleFileUploads}>
-                  Select from computer
-                </button>
               </div>
-            </div>
-          )}
-        </div>
-      </form>
+            ) : (
+              <div className='modal-main'>
+                <div className='modal-header'>
+                  <h2 className='modal-head'>Create new post</h2>
+                </div>
+                <div className='modal-file'>
+                  <div className='modal-image'>
+                    <Svgs.ImageUploadIcon />
+                  </div>
+
+                  <div className='modal-title'>
+                    <p className='modal-text'>Drag photos and videos here</p>
+                  </div>
+
+                  <div className='modal-button'>
+                    <input
+                      type='file'
+                      ref={fileUpload}
+                      className='custom-file-input'
+                      id='customFile'
+                      onChange={handleFileChange}
+                    />
+                    <button className='modal-btn' onClick={handleFileUploads}>
+                      Select from computer
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </form>
+      ) : null}
     </>
   );
 };

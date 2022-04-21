@@ -16,25 +16,26 @@ import PostModal from './Components/Modal/PostModal';
 function App() {
   return (
     <Provider store={store}>
-      <NavBar figures={NavBarImages} />
-      <Router>
-        <div className='main'>
-          <Routes>
-            <Route path='/post' element={<PostModal />} />
-            <Route
-              path='/login'
-              element={<LoginForm loginSlides={LoginImage} />}
-            />
-            <Route
-              path='/signup'
-              element={<Signup signinSlides={SignupImage} />}
-            />
+      <div className='instagram-container'>
+        <NavBar figures={NavBarImages} />
+        <Router>
+          <div className='main'>
+            <Routes>
+              <Route
+                path='/login'
+                element={<LoginForm loginSlides={LoginImage} />}
+              />
+              <Route
+                path='/signup'
+                element={<Signup signinSlides={SignupImage} />}
+              />
 
-            <Route path='/' element={<NewsMain />} />
-            <Route path='/ProfileDetails' element={<ProfileDetails />} />
-          </Routes>
-        </div>
-      </Router>
+              <Route path='/' element={<NewsMain />} />
+              <Route path='/ProfileDetails' element={<ProfileDetails />} />
+            </Routes>
+          </div>
+        </Router>
+      </div>
       <ToastContainer />
     </Provider>
   );

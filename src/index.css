@@ -6,10 +6,10 @@
     'Helvetica Neue', Arial, sans-serif;
 }
 
-.App{
-display: flex;
-justify-content: center;
-align-items: center;
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .instagram-container {
@@ -17,8 +17,6 @@ align-items: center;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 1920px;
-  /* height: 3234px; */
   background-color: #fafafa;
 }
 
@@ -28,10 +26,19 @@ align-items: center;
   flex-direction: column;
   justify-content: center;
   flex-grow: 1;
-  margin: 60px auto 30px;
+  margin: 55px auto 30px;
   max-width: 935px;
   margin-bottom: 0;
   box-sizing: content-box;
   /* width: calc(100% - 40px); */
   padding: 30px 20px 0;
+}
+
+.instagram-container.modal-body {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
 }

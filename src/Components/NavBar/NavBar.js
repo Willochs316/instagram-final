@@ -2,11 +2,25 @@ import './NavBar.css';
 import NavBarIcons from './NavBarIcons';
 import { FaRegCompass, FaSearch } from 'react-icons/fa';
 import Input from './Input';
+import Svgs from '../../assets/svgs';
+import { useState } from 'react';
+import PostModal from '../Modal/PostModal';
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from 'body-scroll-lock';
 
 const NavBar = ({ figures }) => {
+  const [modal, setModal] = useState(false);
+
   const userFigures = (userId) => {
     const existingFigures = figures.filter((figure) => figure.id === userId);
     return existingFigures;
+  };
+
+  const handleToggle = () => {
+    setModal(true);
   };
 
   return (
@@ -35,50 +49,27 @@ const NavBar = ({ figures }) => {
         </div>
 
         <div className='icons-container'>
-          {userFigures(1).map((figure) => (
-            <img
-              className='icons'
-              src={figure.image}
-              alt=''
-              width='24'
-              height='24'
-            />
-          ))}
+          <div className='upload-icon'>
+            <Svgs.HomeUploadIcon className='icons' />
+          </div>
 
-          {userFigures(2).map((figure) => (
-            <img
-              className='icons'
-              src={figure.image}
-              alt=''
-              width='24'
-              height='24'
-            />
-          ))}
+          <div className='upload-icon'>
+            <Svgs.SendUploadIcon className='icons' />
+          </div>
 
-          {userFigures(0).map((figure) => (
-            <img
-              className='icons'
-              src={figure.image}
-              alt=''
-              width='24'
-              height='24'
-            />
-          ))}
-          <NavBarIcons
-            className='icons'
-            icon={FaRegCompass}
-            style={{ fontSize: '24px' }}
-          />
+          <div className='upload-icon'>
+            <Svgs.PlusUploadIcon className='icons' onClick={handleToggle} />
+          </div>
 
-          {userFigures(4).map((figure) => (
-            <img
-              className='icons'
-              src={figure.image}
-              alt=''
-              width='24'
-              height='24'
-            />
-          ))}
+          <PostModal setModal={setModal} show={modal} />
+
+          <div className='upload-icon'>
+            <Svgs.CompassUploadIcon className='icons' />
+          </div>
+
+          <div className='upload-icon'>
+            <Svgs.LoveUploadIcon className='icons' />
+          </div>
 
           {userFigures(5).map((figure) => (
             <div className='profile-fig'>
