@@ -5,11 +5,6 @@ import Input from './Input';
 import Svgs from '../../assets/svgs';
 import { useState } from 'react';
 import PostModal from '../Modal/PostModal';
-import {
-  disableBodyScroll,
-  enableBodyScroll,
-  clearAllBodyScrollLocks,
-} from 'body-scroll-lock';
 
 const NavBar = ({ figures }) => {
   const [modal, setModal] = useState(false);

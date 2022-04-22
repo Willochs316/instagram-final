@@ -324,7 +324,6 @@
   height: auto;
   margin-bottom: 10px;
   margin-top: 18px;
-
 }
 
 .sibar-status {
@@ -388,7 +387,6 @@
   /* padding: 8px 16px; */
 }
 
-
 .sidebar-footer {
   display: flex;
   align-items: center;
@@ -398,13 +396,12 @@
   margin-top: 30px;
 }
 
-
-.sidebar-list{
+.sidebar-list {
   display: flex;
   list-style: none;
 }
 
-.sibarlist-cont{
+.sibarlist-cont {
   display: flex;
   justify-content: flex-start;
   width: 293px;
