@@ -2,16 +2,19 @@
 import React, { useRef, useState } from 'react';
 import Copy from './copy.modal';
 import Svgs from '../../assets/svgs';
+
 import axios from 'axios';
 import './PostModal.css';
+import Discard from './discard_upload_modal';
 
 const PostModal = ({ show, setModal }) => {
   const [file, setFile] = useState('');
   const [filename, setFilename] = useState('');
   const [uploadedFile, setUploadedFile] = useState({});
   const [fileUrl, setFileUrl] = useState(null);
-
   const [isModal, setIsModal] = useState(false);
+  const [showBackModal, setShowBackModal] = useState(false);
+  const [isColor, setIsColor] = useState(null);
 
   const fileUpload = useRef(null);
 
@@ -23,8 +26,8 @@ const PostModal = ({ show, setModal }) => {
   };
 
   const handleFileUploads = async (event) => {
+    console.log(fileUpload.current.click());
     event.preventDefault();
-    console.log(fileUpload.current.click(), 'fileUpload');
 
     const formData = new FormData();
     formData.append('file', file);
@@ -51,13 +54,22 @@ const PostModal = ({ show, setModal }) => {
     setModal(false);
   };
 
-  const [isColor, setIsColor] = useState(null);
-
   const handleCopyToggle = () => {
     setIsModal(true);
     setIsColor({
       backgroundColor: 'rgb(123, 130, 118, 0.5)',
     });
+  };
+
+  // user clicks back arrow => what happens?: I want to show discard modal, if the user has a picture
+  const onBackButtonClick = () => {
+    setShowBackModal(true);
+  };
+
+  // user clicks discard buttons => what happens?:the picture is removed and user can select another picture, and close showBackModal
+  const onDiscardFile = () => {
+    setFileUrl(null);
+    setShowBackModal(false);
   };
 
   return (
@@ -73,15 +85,18 @@ const PostModal = ({ show, setModal }) => {
               <div className='modal-content'>
                 <div className='modal-header'>
                   <div className='back-container'>
-                    <Svgs.BackUploadIcon className='back-icon' />
+                    <Svgs.BackUploadIcon
+                      className='back-icon'
+                      onClick={onBackButtonClick}
+                    />
                   </div>
 
                   <div className='head-container'>
                     <h2 className='modal-head'>Crop</h2>
                   </div>
 
-                  <div className='submit-container'>
-                    <button className='submit-text'>Submit</button>
+                  <div className='next-container'>
+                    <button className='next-text'>Next</button>
                   </div>
                 </div>
 
@@ -134,6 +149,13 @@ const PostModal = ({ show, setModal }) => {
             )}
           </div>
         </form>
+      ) : null}
+
+      {showBackModal ? (
+        <Discard
+          onDicard={onDiscardFile}
+          onClose={() => setShowBackModal(false)}
+        />
       ) : null}
     </>
   );

@@ -2,7 +2,7 @@
 import React, { useRef, useState } from 'react';
 import Svgs from '../../assets/svgs';
 
-const Copy = ({ show, fileUrl, setFileUrl }) => {
+const Copy = ({ show, fileUrl  }) => {
   const [file, setFile] = useState('');
   const [filename, setFilename] = useState('');
 

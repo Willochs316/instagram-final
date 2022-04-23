@@ -11,7 +11,6 @@ import ProfileDetails from './Components/ProfileDetails/ProfileDetails';
 import { store } from './redux/app/store';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Copy from './Components/Modal/copy.modal';
 
 function App() {
   return (
@@ -21,11 +20,6 @@ function App() {
         <Router>
           <div className='main'>
             <Routes>
-            <Route
-                path='/copy'
-                element={<Copy />}
-              />
-
               <Route
                 path='/login'
                 element={<LoginForm loginSlides={LoginImage} />}
