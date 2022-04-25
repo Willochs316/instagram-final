@@ -109,11 +109,13 @@ const PostModal = ({ show, setModal }) => {
                   </div>
                 </div>
 
-                <img
-                  className='image-content'
-                  src={fileUrl}
-                  alt='image-upload'
-                />
+                <div className='crop-image'>
+                  <img
+                    className='image-content'
+                    src={fileUrl}
+                    alt='image-upload'
+                  />
+                </div>
 
                 <div className='copy-container' style={isColor}>
                   <Svgs.CopyUploadIcon onClick={handleCopyToggle} />

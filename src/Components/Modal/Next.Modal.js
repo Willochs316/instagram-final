@@ -45,8 +45,13 @@ const NextModal = ({ modals }) => {
 
             <div className='filter_adjustments-container'>
               <div className='modal-filter'>
-                <Text className='filter' title='Filter' />
-                <Text className='adjustment' title='Adjustments' />
+                <div className='filter-holder'>
+                  <Text className='filter' title='Filter' />
+                </div>
+
+                <div className='filter-holder'>
+                  <Text className='adjustment' title='Adjustments' />
+                </div>
               </div>
 
               <div className='modal_filter-adjustments'>
@@ -54,90 +59,90 @@ const NextModal = ({ modals }) => {
                   {userModalImages(0).map((modal) => (
                     <img src={modal.image} className='modal-image' alt='' />
                   ))}
-                  <Text className='' title='Original' />
+                  <Text className='filter-text' title='Original' />
                 </div>
 
                 <div className='filter-image'>
                   {userModalImages(1).map((modal) => (
                     <img src={modal.image} className='modal-image' alt='' />
                   ))}
-                  <Text className='' title='Clarendon' />
+                  <Text className='filter-text' title='Clarendon' />
                 </div>
 
                 <div className='filter-image'>
                   {userModalImages(2).map((modal) => (
                     <img src={modal.image} className='modal-image' alt='' />
                   ))}
-                  <Text className='' title='Gingham' />
+                  <Text className='filter-text' title='Gingham' />
                 </div>
 
                 <div className='filter-image'>
                   {userModalImages(3).map((modal) => (
                     <img src={modal.image} className='modal-image' alt='' />
                   ))}
-                  <Text className='' title='Gingham' />
+                  <Text className='filter-text' title='Gingham' />
                 </div>
 
                 <div className='filter-image'>
                   {userModalImages(4).map((modal) => (
                     <img src={modal.image} className='modal-image' alt='' />
                   ))}
-                  <Text className='' title='Lark' />
+                  <Text className='filter-text' title='Lark' />
                 </div>
 
                 <div className='filter-image'>
                   {userModalImages(5).map((modal) => (
                     <img src={modal.image} className='modal-image' alt='' />
                   ))}
-                  <Text className='' title='Reyes' />
+                  <Text className='filter-text' title='Reyes' />
                 </div>
 
                 <div className='filter-image'>
                   {userModalImages(6).map((modal) => (
                     <img src={modal.image} className='modal-image' alt='' />
                   ))}
-                  <Text className='' title='Juno' />
+                  <Text className='filter-text' title='Juno' />
                 </div>
 
                 <div className='filter-image'>
                   {userModalImages(7).map((modal) => (
                     <img src={modal.image} className='modal-image' alt='' />
                   ))}
-                  <Text className='' title='Slumber' />
+                  <Text className='filter-text' title='Slumber' />
                 </div>
 
                 <div className='filter-image'>
                   {userModalImages(8).map((modal) => (
                     <img src={modal.image} className='modal-image' alt='' />
                   ))}
-                  <Text className='' title='Crema' />
+                  <Text className='filter-text' title='Crema' />
                 </div>
 
                 <div className='filter-image'>
                   {userModalImages(9).map((modal) => (
                     <img src={modal.image} className='modal-image' alt='' />
                   ))}
-                  <Text className='' title='Ludwig' />
+                  <Text className='filter-text' title='Ludwig' />
                 </div>
 
                 <div className='filter-image'>
                   {userModalImages(10).map((modal) => (
                     <img src={modal.image} className='modal-image' alt='' />
                   ))}
-                  <Text className='' title='Aden' />
+                  <Text className='filter-text' title='Aden' />
                 </div>
 
                 <div className='filter-image'>
                   {userModalImages(11).map((modal) => (
                     <img src={modal.image} className='modal-image' alt='' />
                   ))}
-                  <Text className='' title='Aden' />
+                  <Text className='filter-text' title='Perpetua' />
                 </div>
               </div>
 
-              <div className='range-container'>
+              {/* <div className='range-container'>
                 <input class='range-input' type='range' value='100'></input>
-              </div>
+              </div> */}
             </div>
           </div>
         </form>

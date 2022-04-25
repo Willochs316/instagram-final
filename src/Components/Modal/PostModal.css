@@ -30,17 +30,27 @@
   border: 0 solid black;
   pointer-events: all;
   font-size: 100%;
-  /* width: 375px; */
   min-width: 348px;
   min-height: 391px;
   max-height: 898px;
-  height: 526px;
-  width: 391px;
+  height: 494px;
+  width: 451px;
   position: fixed;
   top: 10%;
   left: 50%;
   transform: translate(-50%, 0);
   overflow: hidden;
+}
+
+.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  width: 100%;
+  position: fixed;
 }
 
 .modal-header {
@@ -50,6 +60,7 @@
   border-bottom: 1px solid #dbdbdb;
   height: 43px;
   width: 100%;
+  /* height: 100%; */
   flex-grow: 1;
 }
 
@@ -58,6 +69,7 @@
   align-items: center;
   justify-content: center;
   margin-left: 8px;
+  height: 100%;
 }
 
 .back-icon {
@@ -108,15 +120,12 @@
   padding: 8px;
 }
 
-.modal-content {
+.crop-image {
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
-  align-items: stretch;
-  height: 100%;
+  justify-content: center;
   width: 100%;
-  position: fixed;
+  height: 450px;
 }
 
 .copy-container {
