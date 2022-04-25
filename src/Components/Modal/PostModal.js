@@ -12,9 +12,10 @@ const PostModal = ({ show, setModal }) => {
   const [filename, setFilename] = useState('');
   const [uploadedFile, setUploadedFile] = useState({});
   const [fileUrl, setFileUrl] = useState(null);
-  const [isModal, setIsModal] = useState(false);
+  const [copyModal, setcopyModal] = useState(false);
   const [showBackModal, setShowBackModal] = useState(false);
   const [isColor, setIsColor] = useState(null);
+  const [isFileUrl, setIsFileUrl] = useState(null);
 
   const fileUpload = useRef(null);
 
@@ -52,13 +53,17 @@ const PostModal = ({ show, setModal }) => {
 
   const handleClose = () => {
     setModal(false);
+    setFileUrl(false);
+    setcopyModal(false);
+    setShowBackModal(false);
   };
 
   const handleCopyToggle = () => {
-    setIsModal(true);
+    setcopyModal(true);
     setIsColor({
       backgroundColor: 'rgb(123, 130, 118, 0.5)',
     });
+    setIsFileUrl(null);
   };
 
   // user clicks back arrow => what happens?: I want to show discard modal, if the user has a picture
@@ -72,15 +77,19 @@ const PostModal = ({ show, setModal }) => {
     setShowBackModal(false);
   };
 
+  const cancelCourseFile = () => {
+    setShowBackModal(false);
+  };
+
   return (
     <>
       {show ? (
-        <form className='modal-body'>
+        <div className='modal-body'>
           <div className='close-icon'>
             <Svgs.CloseUploadIcon onClick={handleClose} />
           </div>
 
-          <div className='modal-container'>
+          <form className='modal-container'>
             {fileUrl ? (
               <div className='modal-content'>
                 <div className='modal-header'>
@@ -112,8 +121,10 @@ const PostModal = ({ show, setModal }) => {
 
                 <div className='copy-contents'>
                   <Copy
-                    show={isModal}
+                    show={copyModal}
                     fileUrl={fileUrl}
+                    isFileUrl={isFileUrl}
+                    setIsFileUrl={setIsFileUrl}
                     setFileUrl={setFileUrl}
                   />
                 </div>
@@ -147,15 +158,12 @@ const PostModal = ({ show, setModal }) => {
                 </div>
               </div>
             )}
-          </div>
-        </form>
+          </form>
+        </div>
       ) : null}
 
       {showBackModal ? (
-        <Discard
-          onDicard={onDiscardFile}
-          onClose={() => setShowBackModal(false)}
-        />
+        <Discard onDicard={onDiscardFile} onClose={cancelCourseFile} />
       ) : null}
     </>
   );

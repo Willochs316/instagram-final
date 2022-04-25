@@ -11,6 +11,10 @@ import ProfileDetails from './Components/ProfileDetails/ProfileDetails';
 import { store } from './redux/app/store';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import NextModal from './Components/Modal/Next.Modal';
+import { Modals } from './Components/Modal/Modal.Image';
+import ModalBox from './Components/GalleryModal/ModalBox';
+import ModalImages from './Components/GalleryModal/ModalImages';
 
 function App() {
   return (
@@ -20,6 +24,11 @@ function App() {
         <Router>
           <div className='main'>
             <Routes>
+              <Route path='/next' element={<NextModal modals={Modals} />} />
+              <Route
+                path='/gallery'
+                element={<ModalBox slides={ModalImages} />}
+              />
               <Route
                 path='/login'
                 element={<LoginForm loginSlides={LoginImage} />}

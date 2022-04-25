@@ -1,9 +1,10 @@
 import './discard_upload.css';
 
 const Discard = ({ onDicard, onClose }) => {
-  const handleCancel = () => {
+  const makeCancelable = () => {
     onClose();
   };
+
 
   const handleDiscard = () => {
     onDicard?.();
@@ -25,7 +26,7 @@ const Discard = ({ onDicard, onClose }) => {
           </button>
         </div>
 
-        <button className='cancel-btn' onClick={handleCancel}>
+        <button className='cancel-btn' onClick={makeCancelable}>
           Cancel
         </button>
       </div>

@@ -25,15 +25,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  align-items: stretch;
-  box-sizing: border-box;
   border-radius: 8px;
   background-color: #ffffff;
   border: 0 solid black;
   pointer-events: all;
   font-size: 100%;
-  margin: 0;
-  padding: 0;
   /* width: 375px; */
   min-width: 348px;
   min-height: 391px;
